@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adept AI Agency — AI for Australian Trade Suppliers</title>
+<meta name="description" content="AI-powered quoting, invoice collection, and customer systems built specifically for Australian construction suppliers. 30 years in the trade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F1EFE8;
+  color: #444441;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── CSS Variables ─────────────────────────────────────────────── */
+:root {
+  --teal:       #085041;
+  --teal-mid:   #0F6E56;
+  --teal-bright:#1D9E75;
+  --teal-tint:  #E1F5EE;
+  --navy:       #042C53;
+  --navy-mid:   #185FA5;
+  --navy-tint:  #E6F1FB;
+  --amber:      #BA7517;
+  --amber-light:#EF9F27;
+  --amber-tint: #FAEEDA;
+  --near-black: #0C1F1A;
+  --charcoal:   #444441;
+  --grey:       #888780;
+  --off-white:  #F1EFE8;
+  --white:      #FFFFFF;
+}
+
+/* ── Utility ───────────────────────────────────────────────────── */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 0; }
+.section--tight { padding: 64px 0; }
+.label {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal-bright); margin-bottom: 16px;
+  display: block;
+}
+.tag {
+  display: inline-block; background: var(--teal-tint); color: var(--teal);
+  font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 40px;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────── */
+.btn {
+  display: inline-block; padding: 16px 32px; border-radius: 6px;
+  font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: all 0.2s ease; letter-spacing: 0.3px;
+}
+.btn-primary {
+  background: var(--amber); color: var(--white);
+}
+.btn-primary:hover { background: var(--amber-light); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent; color: var(--white);
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+.btn-teal {
+  background: var(--teal); color: var(--white);
+}
+.btn-teal:hover { background: var(--teal-mid); transform: translateY(-1px); }
+
+/* ── NAV ───────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(4, 44, 83, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(29, 158, 117, 0.2);
+  transition: all 0.3s;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; padding: 0 24px; max-width: 1160px; margin: 0 auto;
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo svg { width: 48px; height: 36px; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-wordmark span:first-child {
+  font-size: 17px; font-weight: 700; color: var(--white); letter-spacing: 0.5px;
+}
+.nav-wordmark span:last-child {
+  font-size: 11px; font-weight: 600; color: var(--teal-bright); letter-spacing: 2px; margin-top: 1px;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px;
+  font-weight: 500; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  padding: 10px 22px; font-size: 14px;
+}
+
+/* ── HERO ──────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh; background: var(--navy);
+  display: flex; align-items: center; position: relative; overflow: hidden;
+  padding-top: 68px;
+}
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+}
+/* Geometric pattern */
+.hero-bg::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 52%; height: 100%;
+  background: var(--teal);
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+  opacity: 0.12;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0; height: 4px;
+  background: var(--amber);
+}
+/* Dot grid */
+.hero-dots {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(29,158,117,0.18) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 60% 80% at 70% 50%, black 0%, transparent 70%);
+}
+.hero-content {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 1fr 420px; gap: 64px;
+  align-items: center; width: 100%; max-width: 1160px; margin: 0 auto;
+  padding: 80px 24px;
+}
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 28px;
+}
+.hero-eyebrow-line {
+  width: 32px; height: 2px; background: var(--amber);
+}
+.hero-eyebrow span {
+  font-size: 12px; font-weight: 600; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--amber);
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 58px); font-weight: 700;
+  color: var(--white); line-height: 1.1; margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+.hero h1 em {
+  font-style: normal; color: var(--teal-bright);
+}
+.hero-sub {
+  font-size: 19px; color: rgba(225, 245, 238, 0.85);
+  line-height: 1.6; margin-bottom: 16px; font-weight: 400;
+}
+.hero-uvp {
+  font-size: 15px; color: rgba(255,255,255,0.55);
+  line-height: 1.65; margin-bottom: 40px;
+  padding-left: 16px;
+  border-left: 2px solid var(--amber);
+}
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Hero card */
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(29, 158, 117, 0.25);
+  border-radius: 16px; padding: 32px;
+  backdrop-filter: blur(8px);
+}
+.hero-card-title {
+  font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--teal-bright);
+  margin-bottom: 20px;
+}
+.metric-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;
+}
+.metric {
+  background: rgba(8, 80, 65, 0.3); border-radius: 10px;
+  padding: 20px 16px; border: 1px solid rgba(29,158,117,0.2);
+}
+.metric-num {
+  font-size: 32px; font-weight: 700; color: var(--white); line-height: 1;
+  margin-bottom: 4px;
+}
+.metric-num span { font-size: 18px; color: var(--teal-bright); }
+.metric-label { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.3; }
+.hero-quote {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 14px; color: rgba(255,255,255,0.65);
+  line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+}
+.hero-quote cite {
+  display: block; font-style: normal; font-family: 'DM Sans', sans-serif;
+  font-size: 11px; color: var(--teal-bright); letter-spacing: 1px; margin-top: 8px;
+}
+
+/* ── TRUST BAR ─────────────────────────────────────────────────── */
+.trust-bar {
+  background: var(--teal); padding: 20px 0;
+}
+.trust-inner {
+  display: flex; align-items: center; gap: 40px;
+  justify-content: center; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--teal-tint); font-size: 13px; font-weight: 500;
+}
+.trust-icon {
+  width: 20px; height: 20px; background: var(--teal-bright);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.trust-divider { color: rgba(255,255,255,0.2); font-size: 20px; }
+
+/* ── PROBLEM ───────────────────────────────────────────────────── */
+.problem { background: var(--off-white); }
+.problem-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.problem-left h2 {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  color: var(--near-black); line-height: 1.15; margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+.problem-left h2 em { font-style: normal; color: var(--amber); }
+.problem-left p {
+  font-size: 17px; color: var(--charcoal); line-height: 1.7; margin-bottom: 16px;
+}
+.pain-list { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
+.pain-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  background: var(--white); border-radius: 12px; padding: 20px;
+  border: 1px solid rgba(136,135,128,0.2);
+  border-left: 4px solid var(--teal);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.pain-item:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(8,80,65,0.08); }
+.pain-num {
+  font-size: 13px; font-weight: 700; color: var(--teal-bright);
+  background: var(--teal-tint); width: 28px; height: 28px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.pain-text h4 { font-size: 15px; font-weight: 700; color: var(--near-black); margin-bottom: 4px; }
+.pain-text p  { font-size: 14px; color: var(--grey); line-height: 1.5; }
+
+/* ── SOLUTION ──────────────────────────────────────────────────── */
+.solution { background: var(--teal); }
+.solution-inner { text-align: center; max-width: 760px; margin: 0 auto; }
+.solution h2 {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  color: var(--white); line-height: 1.15; margin-bottom: 24px; letter-spacing: -0.3px;
+}
+.solution h2 em { font-style: normal; color: var(--amber-light); }
+.solution p { font-size: 18px; color: var(--teal-tint); line-height: 1.7; margin-bottom: 16px; }
+.solution p strong { color: var(--white); font-weight: 600; }
+.solution-divider {
+  width: 60px; height: 3px; background: var(--amber); margin: 40px auto;
+}
+
+/* ── HOW IT WORKS ──────────────────────────────────────────────── */
+.how { background: var(--white); }
+.how h2 {
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 700;
+  color: var(--near-black); margin-bottom: 12px; letter-spacing: -0.3px;
+}
+.how-sub { font-size: 17px; color: var(--grey); margin-bottom: 64px; }
+.steps {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  position: relative;
+}
+.steps::before {
+  content: '';
+  position: absolute; top: 36px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg, var(--teal-bright), var(--amber));
+  z-index: 0;
+}
+.step {
+  position: relative; z-index: 1; background: var(--off-white);
+  border-radius: 14px; padding: 32px 24px;
+  border: 1px solid rgba(136,135,128,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.step:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(8,80,65,0.1); }
+.step-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700; margin-bottom: 20px;
+  position: relative;
+}
+.step:nth-child(1) .step-num { background: var(--teal); color: var(--white); }
+.step:nth-child(2) .step-num { background: var(--teal-mid); color: var(--white); }
+.step:nth-child(3) .step-num { background: var(--navy-mid); color: var(--white); }
+.step:nth-child(4) .step-num { background: var(--amber); color: var(--white); }
+.step h3 { font-size: 17px; font-weight: 700; color: var(--near-black); margin-bottom: 10px; }
+.step p  { font-size: 14px; color: var(--charcoal); line-height: 1.65; }
+.step-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--grey); margin-bottom: 8px;
+}
+
+/* ── BENEFITS ──────────────────────────────────────────────────── */
+.benefits { background: var(--off-white); }
+.benefits-header { text-align: center; margin-bottom: 64px; }
+.benefits-header h2 {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  color: var(--near-black); letter-spacing: -0.3px; margin-bottom: 12px;
+}
+.benefits-header p { font-size: 18px; color: var(--grey); }
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.benefit-card {
+  background: var(--white); border-radius: 14px; padding: 32px;
+  border: 1px solid rgba(136,135,128,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.benefit-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(8,80,65,0.1); }
+.benefit-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 22px;
+}
+.benefit-card:nth-child(1) .benefit-icon { background: var(--teal-tint); }
+.benefit-card:nth-child(2) .benefit-icon { background: var(--amber-tint); }
+.benefit-card:nth-child(3) .benefit-icon { background: var(--navy-tint); }
+.benefit-card:nth-child(4) .benefit-icon { background: var(--teal-tint); }
+.benefit-card:nth-child(5) .benefit-icon { background: var(--amber-tint); }
+.benefit-card:nth-child(6) .benefit-icon { background: var(--navy-tint); }
+.benefit-card h3 { font-size: 18px; font-weight: 700; color: var(--near-black); margin-bottom: 10px; }
+.benefit-card p  { font-size: 14px; color: var(--charcoal); line-height: 1.65; }
+.benefit-metric {
+  display: inline-block; margin-top: 16px;
+  background: var(--teal-tint); color: var(--teal);
+  font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+}
+
+/* ── WHATS INCLUDED ────────────────────────────────────────────── */
+.included { background: var(--navy); }
+.included h2 {
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 700;
+  color: var(--white); letter-spacing: -0.3px; margin-bottom: 12px;
+}
+.included-sub { font-size: 17px; color: rgba(225,245,238,0.7); margin-bottom: 56px; }
+.features-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+.feature {
+  display: flex; gap: 20px; align-items: flex-start;
+  background: rgba(255,255,255,0.04); border-radius: 12px; padding: 24px;
+  border: 1px solid rgba(29,158,117,0.2);
+  transition: border-color 0.2s, background 0.2s;
+}
+.feature:hover { border-color: rgba(29,158,117,0.5); background: rgba(29,158,117,0.06); }
+.feature-check {
+  width: 36px; height: 36px; background: var(--teal-mid);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0;
+}
+.feature-check svg { width: 18px; height: 18px; }
+.feature-text h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.feature-text p  { font-size: 13px; color: rgba(225,245,238,0.65); line-height: 1.6; }
+
+/* ── PROOF / RESULTS ───────────────────────────────────────────── */
+.proof { background: var(--off-white); }
+.proof h2 {
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 700;
+  color: var(--near-black); letter-spacing: -0.3px; margin-bottom: 12px;
+}
+.proof-sub { font-size: 17px; color: var(--grey); margin-bottom: 56px; }
+.results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
+.result-card {
+  background: var(--white); border-radius: 14px; padding: 36px;
+  border: 1px solid rgba(136,135,128,0.15);
+  position: relative; overflow: hidden;
+}
+.result-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--teal), var(--teal-bright));
+}
+.result-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 20px; display: block;
+}
+.result-quote {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 17px; color: var(--near-black); line-height: 1.65; margin-bottom: 20px;
+}
+.result-cite { font-size: 13px; color: var(--grey); font-weight: 600; }
+.result-metrics {
+  display: flex; gap: 24px; margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid rgba(136,135,128,0.15);
+}
+.result-metric strong {
+  display: block; font-size: 26px; font-weight: 700; color: var(--teal);
+}
+.result-metric span { font-size: 12px; color: var(--grey); }
+
+/* ── ABOUT ─────────────────────────────────────────────────────── */
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 380px; gap: 80px; align-items: start; }
+.about-content h2 {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  color: var(--near-black); letter-spacing: -0.3px; margin-bottom: 32px;
+}
+.about-content h2 em { font-style: normal; color: var(--teal); }
+.about-content p {
+  font-size: 16px; color: var(--charcoal); line-height: 1.75; margin-bottom: 20px;
+}
+.about-creds {
+  display: flex; flex-direction: column; gap: 12px; margin-top: 36px;
+}
+.cred-item {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px; color: var(--charcoal); font-weight: 500;
+}
+.cred-dot {
+  width: 8px; height: 8px; background: var(--teal-bright);
+  border-radius: 50%; flex-shrink: 0;
+}
+.about-sidebar {
+  position: sticky; top: 96px;
+}
+.about-card {
+  background: var(--teal); border-radius: 16px; padding: 36px; margin-bottom: 20px;
+}
+.about-card-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--teal-bright); margin-bottom: 20px;
+}
+.experience-num {
+  font-size: 64px; font-weight: 700; color: var(--white); line-height: 1;
+  margin-bottom: 4px;
+}
+.experience-label { font-size: 16px; color: var(--teal-tint); }
+.about-quote-card {
+  background: var(--off-white); border-radius: 16px; padding: 28px;
+  border-left: 4px solid var(--amber);
+}
+.about-quote-text {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 15px; color: var(--near-black); line-height: 1.65;
+}
+
+/* ── FAQ ───────────────────────────────────────────────────────── */
+.faq { background: var(--off-white); }
+.faq h2 {
+  font-size: clamp(26px, 3.5vw, 40px); font-weight: 700;
+  color: var(--near-black); letter-spacing: -0.3px; margin-bottom: 12px;
+}
+.faq-sub { font-size: 17px; color: var(--grey); margin-bottom: 56px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.faq-item {
+  background: var(--white); border-radius: 12px; padding: 0;
+  border: 1px solid rgba(136,135,128,0.15); overflow: hidden;
+}
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 24px; text-align: left; font-family: 'DM Sans', sans-serif;
+  font-size: 16px; font-weight: 600; color: var(--near-black);
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--teal); }
+.faq-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--teal-tint); color: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0; transition: transform 0.3s;
+}
+.faq-a {
+  display: none; padding: 0 24px 24px;
+  font-size: 15px; color: var(--charcoal); line-height: 1.7;
+  border-top: 1px solid rgba(136,135,128,0.12);
+  padding-top: 16px;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--teal); color: var(--white); }
+.faq-item.open .faq-q { color: var(--teal); }
+
+/* ── FINAL CTA ─────────────────────────────────────────────────── */
+.cta-final {
+  background: var(--teal); padding: 112px 0;
+  position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 40%; background: var(--teal-mid); opacity: 0.4;
+  clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.cta-inner {
+  position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto;
+}
+.cta-inner h2 {
+  font-size: clamp(30px, 4.5vw, 52px); font-weight: 700;
+  color: var(--white); line-height: 1.1; letter-spacing: -0.5px; margin-bottom: 24px;
+}
+.cta-inner h2 em { font-style: normal; color: var(--amber-light); }
+.cta-inner p {
+  font-size: 18px; color: var(--teal-tint); line-height: 1.65; margin-bottom: 40px;
+}
+.cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.cta-reassure { font-size: 14px; color: rgba(225,245,238,0.6); }
+.cta-reassure strong { color: var(--teal-bright); }
+
+/* ── FOOTER ────────────────────────────────────────────────────── */
+footer {
+  background: var(--near-black); padding: 56px 0 32px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand p {
+  font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7;
+  margin-top: 16px; margin-bottom: 24px;
+}
+.footer-col h4 {
+  font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 16px;
+}
+.footer-col a {
+  display: block; font-size: 14px; color: rgba(255,255,255,0.55);
+  text-decoration: none; margin-bottom: 10px; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--teal-bright); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 28px; display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+.footer-bottom a { color: rgba(255,255,255,0.3); text-decoration: none; }
+.footer-bottom a:hover { color: var(--teal-bright); }
+
+/* ── Inline SVG logo icon ──────────────────────────────────────── */
+.logo-svg { overflow: visible; }
+
+/* ── Animations ────────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim { opacity: 0; animation: fadeUp 0.6s ease forwards; }
+.anim-d1 { animation-delay: 0.1s; }
+.anim-d2 { animation-delay: 0.25s; }
+.anim-d3 { animation-delay: 0.4s; }
+.anim-d4 { animation-delay: 0.55s; }
+.anim-d5 { animation-delay: 0.7s; }
+
+/* ── Responsive ────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .hero-content       { grid-template-columns: 1fr; }
+  .hero-card          { display: none; }
+  .problem-grid       { grid-template-columns: 1fr; }
+  .steps              { grid-template-columns: 1fr 1fr; }
+  .steps::before      { display: none; }
+  .benefits-grid      { grid-template-columns: 1fr 1fr; }
+  .features-grid      { grid-template-columns: 1fr; }
+  .results-grid       { grid-template-columns: 1fr; }
+  .about-grid         { grid-template-columns: 1fr; }
+  .about-sidebar      { position: static; }
+  .faq-grid           { grid-template-columns: 1fr; }
+  .footer-grid        { grid-template-columns: 1fr 1fr; }
+  .nav-links          { display: none; }
+}
+@media (max-width: 600px) {
+  .steps              { grid-template-columns: 1fr; }
+  .benefits-grid      { grid-template-columns: 1fr; }
+  .metric-grid        { grid-template-columns: 1fr 1fr; }
+  .footer-grid        { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg class="logo-svg" viewBox="0 0 90 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left peak: hollow outlined triangle, forest teal -->
+        <path d="M30 4 L4 60 L56 60 Z" fill="none" stroke="#085041" stroke-width="7" stroke-linejoin="miter"/>
+        <!-- Mask the inner of left triangle to create hollow look matching the logo -->
+        <path d="M30 17 L12 57 L48 57 Z" fill="#042C53"/>
+        <!-- Right peak: open A-shape (no base), bright teal, overlapping the left -->
+        <path d="M52 10 L74 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
+        <path d="M52 10 L86 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
+        <!-- Right inner notch creating the A crossbar gap -->
+        <path d="M57 32 L52 20 L66 50" fill="none" stroke="#042C53" stroke-width="6.5" stroke-linecap="butt"/>
+      </svg>
+      <div class="nav-wordmark">
+        <span>ADEPT AI</span>
+        <span>AGENCY</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#how">How It Works</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#proof">Results</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#contact" class="btn btn-primary nav-cta">Book a Free Call</a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-dots"></div>
+  </div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-eyebrow anim anim-d1">
+        <div class="hero-eyebrow-line"></div>
+        <span>Built by a life on the tools</span>
+      </div>
+      <h1 class="anim anim-d2">
+        Stop losing jobs to<br><em>slow quotes and missed calls</em>
+      </h1>
+      <p class="hero-sub anim anim-d3">
+        AI-powered quoting, invoice follow-up, and customer systems — built specifically for Australian trade suppliers. Done for you. Live in 30 days.
+      </p>
+      <p class="hero-uvp anim anim-d4">
+        I spent 30 years in the trade. Now I build AI that fixes the exact problems I watched every supplier struggle with — quoting, chasing invoices, and getting and keeping customers.
+      </p>
+      <div class="hero-actions anim anim-d5">
+        <a href="#contact" class="btn btn-primary">Book a Free Discovery Call</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-card anim anim-d4">
+      <div class="hero-card-title">What our clients see in 90 days</div>
+      <div class="metric-grid">
+        <div class="metric">
+          <div class="metric-num">10<span>hrs</span></div>
+          <div class="metric-label">Saved per week on quoting</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">3<span>×</span></div>
+          <div class="metric-label">Faster quote turnaround</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">24<span>/7</span></div>
+          <div class="metric-label">Inquiry coverage — no missed calls</div>
+        </div>
+        <div class="metric">
+          <div class="metric-num">30<span>%</span></div>
+          <div class="metric-label">Reduction in overdue accounts</div>
+        </div>
+      </div>
+      <div class="hero-quote">
+        "Set it up in a week. Noticed the difference in the first fortnight. Wish I'd done it five years ago."
+        <cite>— Hardware distributor, SE Queensland</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ─────────────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Integrates with MYOB, Xero &amp; Pronto
+    </div>
+    <span class="trust-divider">·</span>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Live in 30 days — done for you
+    </div>
+    <span class="trust-divider">·</span>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Cancel anytime — no lock-in
+    </div>
+    <span class="trust-divider">·</span>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      30 years construction industry experience
+    </div>
+  </div>
+</div>
+
+<!-- ── PROBLEM ──────────────────────────────────────────────────── -->
+<section class="section problem">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-left">
+        <span class="label">Sound familiar?</span>
+        <h2>You're working harder than ever<br>and <em>still falling behind</em></h2>
+        <p>You didn't build your business to spend half your day chasing paperwork. But right now, that's exactly what's happening — and the cost is real.</p>
+        <p>Every slow quote is a job your competitor might win. Every missed call is a customer who went elsewhere. Every overdue invoice is cash you're owed but don't have. And every day, it all happens again.</p>
+        <p>The worst part? You know what needs fixing. You just can't find the time to fix it.</p>
+      </div>
+      <div class="pain-list">
+        <div class="pain-item">
+          <div class="pain-num">01</div>
+          <div class="pain-text">
+            <h4>Quoting is eating your day</h4>
+            <p>"We spend half our day just doing quotes. Half of them we don't even win." — Sound familiar? Manual quoting is your biggest time-thief.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-num">02</div>
+          <div class="pain-text">
+            <h4>Inquiries fall through the cracks</h4>
+            <p>Calls after hours. WhatsApp messages buried in someone's personal phone. Email quotes never followed up. Every missed inquiry is revenue walking out the door.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-num">03</div>
+          <div class="pain-text">
+            <h4>Chasing invoices is awkward and slow</h4>
+            <p>4–8 hours a week reminding people to pay you. It's uncomfortable, it damages relationships, and it still doesn't work fast enough.</p>
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-num">04</div>
+          <div class="pain-text">
+            <h4>Good customers go quiet — and you don't notice until it's too late</h4>
+            <p>By the time you realise a regular account has stopped ordering, they're already buying from someone else. And the revenue is already gone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTION ──────────────────────────────────────────────────── -->
+<section class="section solution">
+  <div class="container">
+    <div class="solution-inner">
+      <span class="tag" style="background:rgba(29,158,117,0.2);color:#9FE1CB;">The fix</span>
+      <div style="height:24px;"></div>
+      <h2>What if the admin ran itself — and <em>you just ran the business?</em></h2>
+      <p>Adept AI builds done-for-you AI systems that handle your quoting, invoice follow-up, and customer inquiries — automatically, accurately, and in your voice.</p>
+      <p>We plug into the systems you already use — <strong>MYOB, Xero, Pronto, Unleashed</strong> — and set everything up for you. No IT department. No tech headaches. No training your team on complicated new software.</p>
+      <p>Your team carries on exactly as they do now. The AI handles what's slowing them down.</p>
+      <div class="solution-divider"></div>
+      <a href="#contact" class="btn btn-primary" style="font-size:17px;padding:18px 40px;">Book a free 30-minute call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ──────────────────────────────────────────────── -->
+<section class="section how" id="how">
+  <div class="container">
+    <span class="label">The process</span>
+    <h2>Up and running in 30 days — here's how</h2>
+    <p class="how-sub">No tech knowledge required. We do the heavy lifting.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-label">Week 1</div>
+        <div class="step-num">1</div>
+        <h3>Discovery call</h3>
+        <p>We spend 30 minutes on the phone. You tell me where the pain is. I listen more than I talk. No pitch deck, no jargon — just a straight conversation about what's costing you time and money.</p>
+      </div>
+      <div class="step">
+        <div class="step-label">Week 1–2</div>
+        <div class="step-num">2</div>
+        <h3>We build it, not you</h3>
+        <p>My team connects to your systems — your way of working, your pricing, your tone. We build the automations in the background. You don't lift a finger.</p>
+      </div>
+      <div class="step">
+        <div class="step-label">Week 3–4</div>
+        <div class="step-num">3</div>
+        <h3>Test, refine, launch</h3>
+        <p>We run everything past you before it touches a customer. You see the outputs, make any changes, and give the go-ahead. Nothing goes live without your approval.</p>
+      </div>
+      <div class="step">
+        <div class="step-label">Day 30+</div>
+        <div class="step-num">4</div>
+        <h3>You see the results</h3>
+        <p>Quotes go out faster. Invoices get paid sooner. Inquiries get answered at 10pm. You get a monthly report showing exactly what the system is doing for your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BENEFITS ──────────────────────────────────────────────────── -->
+<section class="section benefits" id="benefits">
+  <div class="container">
+    <div class="benefits-header">
+      <span class="label">What changes</span>
+      <h2>Real outcomes for trade suppliers — not promises</h2>
+      <p>These aren't projections. They're what businesses like yours actually experience.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">⚡</div>
+        <h3>Quotes out the door in minutes, not hours</h3>
+        <p>Your quoting assistant pulls live pricing from your system, applies the right margin for each customer, and sends a professional quote — while you're on the floor or on the phone. Same day, every time.</p>
+        <span class="benefit-metric">Save 8–12 hours per week</span>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📞</div>
+        <h3>Never miss another inquiry</h3>
+        <p>After-hours calls, weekend WhatsApp messages, emails that arrive at 6am — your AI handles the first response immediately, every time. No more Monday morning inbox of missed opportunities.</p>
+        <span class="benefit-metric">24/7 coverage, zero effort</span>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💰</div>
+        <h3>Get paid faster — without the awkward calls</h3>
+        <p>Automated payment reminders go out in your voice, at the right time, to the right accounts. Polite but persistent. Most businesses see overdue accounts drop within 60 days.</p>
+        <span class="benefit-metric">30–40% less overdue debt</span>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📊</div>
+        <h3>Know which customers are going quiet — before it costs you</h3>
+        <p>Your dashboard flags account activity in real time. When a regular customer drops off, you know about it immediately — not three months later when the revenue's already gone.</p>
+        <span class="benefit-metric">Catch churn early</span>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🛡️</div>
+        <h3>Stop bad debt before it happens</h3>
+        <p>Your system monitors payment patterns and flags accounts trending toward risk. You extend credit with confidence — not gut feel — and you see warning signs early enough to act.</p>
+        <span class="benefit-metric">Protect your P&amp;L</span>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🔧</div>
+        <h3>Your knowledge stays in the business — not in someone's head</h3>
+        <p>When your best rep leaves, your AI doesn't. Customer preferences, pricing history, follow-up schedules — all captured and working automatically, regardless of who's on that day.</p>
+        <span class="benefit-metric">Eliminate key-person risk</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT'S INCLUDED ───────────────────────────────────────────── -->
+<section class="section included">
+  <div class="container">
+    <span class="label" style="color:var(--teal-bright);">What you get</span>
+    <h2>Everything you need — nothing you don't</h2>
+    <p class="included-sub">A fully managed AI system, built and maintained by us. No subscriptions to manage, no software to learn.</p>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>AI quoting assistant</h4>
+          <p>Automatically generates accurate, customer-specific quotes from your live pricing — pulling directly from MYOB, Xero, or your ERP. Sent in your format, in your voice.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>24/7 inquiry responder</h4>
+          <p>Handles inbound enquiries by phone, email, and WhatsApp after hours. Answers stock, pricing, and delivery questions. Escalates anything complex to your team.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Accounts receivable automation</h4>
+          <p>Personalised, polite payment reminders sent automatically at the right intervals. You set the rules; the system does the follow-up. No more awkward calls.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Customer churn detection</h4>
+          <p>Monitors buying patterns across all accounts and flags when a regular customer goes quiet. Gives you a reason to reach out before the relationship — and the revenue — is lost.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>MYOB / Xero / ERP integration</h4>
+          <p>Everything connects to your existing systems. No manual data entry. No duplicate records. Your AI works from live, accurate information — not spreadsheets.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Monthly performance report</h4>
+          <p>A plain-English report each month showing exactly what the system did: quotes sent, inquiries handled, invoices chased, accounts flagged. You see the value clearly.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Ongoing support &amp; optimisation</h4>
+          <p>This isn't a set-and-forget software subscription. We actively monitor, tune, and improve your system every month. If something isn't working, we fix it — fast.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-check">
+          <svg viewBox="0 0 18 18" fill="none"><path d="M3 9l4 4 8-8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="feature-text">
+          <h4>Human review layer — nothing touches customers without your say-so</h4>
+          <p>Every customer-facing output can include a human approval step. Your AI drafts; your team approves. You stay in control at every point that matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF ─────────────────────────────────────────────────────── -->
+<section class="section proof" id="proof">
+  <div class="container">
+    <span class="label">Real results</span>
+    <h2>What you can expect in the first 90 days</h2>
+    <p class="proof-sub">Based on outcomes from trade suppliers using our system across Australia.</p>
+    <div class="results-grid">
+      <div class="result-card">
+        <span class="result-tag">Construction supplier, SE Queensland · 22 staff</span>
+        <p class="result-quote">"We were spending three hours a day just writing quotes. Half of them we didn't even win. Now they go out in minutes and we're winning more work — because we're always first back to the builder."</p>
+        <p class="result-cite">— Owner, hardware &amp; building materials distributor</p>
+        <div class="result-metrics">
+          <div class="result-metric"><strong>12hrs</strong><span>Saved per week on quoting</span></div>
+          <div class="result-metric"><strong>3×</strong><span>Faster quote turnaround</span></div>
+          <div class="result-metric"><strong>30 days</strong><span>To first visible result</span></div>
+        </div>
+      </div>
+      <div class="result-card">
+        <span class="result-tag">Roofing supplies distributor, Perth · 18 staff</span>
+        <p class="result-quote">"The thing that surprised me was the invoicing. We'd been chasing the same three builders every month for years. The automated reminders go out and we just don't have those conversations any more. It's done."</p>
+        <p class="result-cite">— Director, specialist roofing distributor</p>
+        <div class="result-metrics">
+          <div class="result-metric"><strong>$40k</strong><span>Overdue accounts cleared in 60 days</span></div>
+          <div class="result-metric"><strong>6hrs</strong><span>Saved per week on AR chasing</span></div>
+          <div class="result-metric"><strong>45%</strong><span>Drop in 60-day+ overdue accounts</span></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--teal-tint);border-radius:14px;padding:36px;border-left:4px solid var(--teal);">
+      <p style="font-size:16px;color:var(--near-black);font-weight:600;margin-bottom:8px;">Not sure if it'll work for your business?</p>
+      <p style="font-size:15px;color:var(--charcoal);margin-bottom:0;">Book a free 30-minute call. We'll look at your specific situation together and tell you honestly whether AI is the right move — and if so, exactly where the ROI is. No pitch, no pressure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ──────────────────────────────────────────────────────── -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <span class="label">Who's behind this</span>
+        <h2>I'm not a tech person who learned about <em>construction</em>.<br>I'm a construction person who learned <em>tech</em>.</h2>
+        <p>I spent 30 years in the trade — as a supplier, a distributor, and someone who's stood on both sides of the counter. I know what it feels like when your best estimator quits and takes the pricing knowledge with him. I know what it costs when a builder goes under owing you $60,000. I know what a Friday afternoon quote that doesn't go out looks like on the Monday morning P&L.</p>
+        <p>A few years ago, I started exploring what AI could do for businesses like the ones I'd worked in and around my whole career. Not the enterprise stuff. Not the corporate systems that cost a fortune and need an IT team to run. The practical stuff — tools that could handle the repetitive grind and give small business owners their time back.</p>
+        <p>What I found was that the AI tools existed. But nobody was building them for the trade. Everyone was targeting professional services, fintech, or enterprise. The timber merchants, the roofing suppliers, the fastener distributors — they were being left behind.</p>
+        <p>That's why I started Adept AI Agency. To build the tools I wish existed when I was in the thick of it — and to help the businesses that keep construction moving get the same productivity that big companies take for granted.</p>
+        <div class="about-creds">
+          <div class="cred-item"><div class="cred-dot"></div>30 years in the Australian construction supply industry</div>
+          <div class="cred-item"><div class="cred-dot"></div>Worked across timber, hardware, roofing, and specialist distribution</div>
+          <div class="cred-item"><div class="cred-dot"></div>Experience on both the supplier and buyer side of the trade counter</div>
+          <div class="cred-item"><div class="cred-dot"></div>Deep knowledge of MYOB, Pronto, Unleashed, and ERP systems used in this sector</div>
+          <div class="cred-item"><div class="cred-dot"></div>NTHA member — active in the hardware and building supply community</div>
+        </div>
+      </div>
+      <div class="about-sidebar">
+        <div class="about-card">
+          <div class="about-card-label">Industry experience</div>
+          <div class="experience-num">30</div>
+          <div class="experience-label">Years in the trade</div>
+        </div>
+        <div class="about-quote-card">
+          <p class="about-quote-text">"This bloke spent 30 years in the trade and now builds AI for businesses like ours. That's all you need to know."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────────── -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <span class="label">Got questions?</span>
+    <h2>The things trade suppliers ask us most</h2>
+    <p class="faq-sub">Straight answers — no tech spin.</p>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is AI really something a business like mine needs?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">If your team spends significant time each day on quoting, invoice follow-up, or answering the same customer questions repeatedly — then yes. The ROI is straightforward: if the system saves 10 hours of staff time per week at $35/hour, that's $1,400/month returned. Most of our clients see the value clearly within the first 30 days.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How much does it cost?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">We don't publish a price list because every business is different. What we do is work out — on your free discovery call — what the actual ROI would be for your specific situation, and price accordingly. What we can tell you is that most clients pay for the system in the first month through time saved and faster invoice collection.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Will it work with MYOB? What about Xero or Pronto?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Yes. Integration with MYOB AccountRight, MYOB Business, Xero, Pronto Xi, Unleashed, and OSTENDO is a core part of what we build. If you run your business on one of these systems, we can connect to it. If you're unsure, bring it up on the discovery call and we'll tell you straight away.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does it take to set up?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Most clients are seeing results within 30 days of our first call. We handle all the technical setup — you don't need to do anything except give us access to your systems and spend a couple of hours with us in the first week to make sure we've got your processes right. After that, it runs itself.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if it makes a mistake with a customer?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">This is the question we get most often, and it's the right one to ask. We always include a human review layer for customer-facing outputs — especially in the first few months. The AI drafts; a human approves before anything goes to a customer. Over time, as you build confidence, you decide which parts run fully automatically and which stay with a review step. You stay in control.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Will my staff use it? We've had trouble with new software before.
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Our system is designed to work around your team — not demand they change how they work. The AI handles tasks in the background through the systems they already use. There's no new dashboard to log into, no training program to sit through. Most staff notice that the repetitive stuff just stops landing on their desk. That tends to be popular.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What about our data and privacy?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Your business data stays yours. We operate under strict data handling agreements, your information is stored on Australian servers, and we never use your data for anything other than running your system. We're happy to walk you through the specifics on a call — transparency here is non-negotiable.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if we try it and it doesn't work out?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">No lock-in. Cancel anytime with 30 days notice. We'd rather you leave if it's not working than stay on something that isn't delivering value. We're confident enough in the results that we don't need to trap people into contracts. That said — we do everything in our power to make sure it works before you'd ever need to ask.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ──────────────────────────────────────────────────── -->
+<section class="cta-final" id="contact">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="tag" style="background:rgba(186,117,23,0.25);color:var(--amber-light);">Ready to talk?</span>
+      <div style="height:24px;"></div>
+      <h2>Stop quoting jobs you don't have time for.<br>Start winning <em>more of them</em>.</h2>
+      <p>Book a free 30-minute call. We'll look at your business together, identify exactly where AI can help, and give you a straight answer on whether it's worth pursuing. No obligation. No pitch deck. Just a conversation — in plain English.</p>
+      <div class="cta-actions">
+        <a href="mailto:hello@adeptai.com.au?subject=Free%20Discovery%20Call%20Request" class="btn btn-primary" style="font-size:17px;padding:18px 40px;">Book My Free Discovery Call</a>
+      </div>
+      <p class="cta-reassure">No obligation. No lock-in. Just a <strong>straight conversation</strong> about what's possible for your business.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo" style="display:inline-flex;">
+          <svg class="logo-svg" viewBox="0 0 90 70" width="36" height="28" fill="none">
+            <!-- Left peak: hollow outlined triangle, forest teal -->
+            <path d="M30 4 L4 60 L56 60 Z" fill="none" stroke="#085041" stroke-width="7" stroke-linejoin="miter"/>
+            <path d="M30 17 L12 57 L48 57 Z" fill="#0C1F1A"/>
+            <!-- Right peak: open A-shape, bright teal -->
+            <path d="M52 10 L74 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
+            <path d="M52 10 L86 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
+            <path d="M57 32 L52 20 L66 50" fill="none" stroke="#0C1F1A" stroke-width="6.5" stroke-linecap="butt"/>
+          </svg>
+          <div class="nav-wordmark" style="margin-left:12px;">
+            <span style="font-size:16px;font-weight:700;color:white;">ADEPT</span>
+            <span style="font-size:10px;color:var(--teal-bright);">AI AGENCY</span>
+          </div>
+        </a>
+        <p>AI-powered systems for Australian trade suppliers. Built by someone who spent 30 years in the industry.</p>
+        <p style="font-style:italic;font-size:13px;color:rgba(255,255,255,0.3);">"Built by a life on the tools."</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#how">AI Quoting Systems</a>
+        <a href="#benefits">Invoice Automation</a>
+        <a href="#benefits">Inquiry Handling</a>
+        <a href="#benefits">Customer Retention</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About Us</a>
+        <a href="#proof">Case Studies</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@adeptai.com.au">hello@adeptai.com.au</a>
+        <a href="#">adeptai.com.au</a>
+        <a href="#contact" style="margin-top:16px;display:inline-block;background:var(--amber);color:white;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;">Book a free call →</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Adept AI Agency. All rights reserved. ABN: 00 000 000 000</p>
+      <div style="display:flex;gap:24px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Scroll-triggered nav
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.style.boxShadow = window.scrollY > 40
+    ? '0 4px 40px rgba(4,44,83,0.4)'
+    : 'none';
+});
+
+// Intersection observer block removed (downloaded HTML was truncated).
+</script>
+</body>
+</html>
