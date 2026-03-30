@@ -88,7 +88,7 @@ nav {
   height: 68px; padding: 0 24px; max-width: 1160px; margin: 0 auto;
 }
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.nav-logo svg { width: 48px; height: 36px; }
+.nav-logo img { width: 48px; height: 36px; display: block; }
 .nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
 .nav-wordmark span:first-child {
   font-size: 17px; font-weight: 700; color: var(--white); letter-spacing: 0.5px;
@@ -594,17 +594,13 @@ footer {
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg class="logo-svg" viewBox="0 0 90 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Left peak: hollow outlined triangle, forest teal -->
-        <path d="M30 4 L4 60 L56 60 Z" fill="none" stroke="#085041" stroke-width="7" stroke-linejoin="miter"/>
-        <!-- Mask the inner of left triangle to create hollow look matching the logo -->
-        <path d="M30 17 L12 57 L48 57 Z" fill="#042C53"/>
-        <!-- Right peak: open A-shape (no base), bright teal, overlapping the left -->
-        <path d="M52 10 L74 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
-        <path d="M52 10 L86 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
-        <!-- Right inner notch creating the A crossbar gap -->
-        <path d="M57 32 L52 20 L66 50" fill="none" stroke="#042C53" stroke-width="6.5" stroke-linecap="butt"/>
-      </svg>
+      <img
+        src="./adept-ai-logo.svg"
+        class="logo-svg"
+        width="48"
+        height="36"
+        alt="Adept AI Agency logo"
+      />
       <div class="nav-wordmark">
         <span>ADEPT AI</span>
         <span>AGENCY</span>
@@ -1092,15 +1088,13 @@ footer {
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="nav-logo" style="display:inline-flex;">
-          <svg class="logo-svg" viewBox="0 0 90 70" width="36" height="28" fill="none">
-            <!-- Left peak: hollow outlined triangle, forest teal -->
-            <path d="M30 4 L4 60 L56 60 Z" fill="none" stroke="#085041" stroke-width="7" stroke-linejoin="miter"/>
-            <path d="M30 17 L12 57 L48 57 Z" fill="#0C1F1A"/>
-            <!-- Right peak: open A-shape, bright teal -->
-            <path d="M52 10 L74 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
-            <path d="M52 10 L86 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
-            <path d="M57 32 L52 20 L66 50" fill="none" stroke="#0C1F1A" stroke-width="6.5" stroke-linecap="butt"/>
-          </svg>
+          <img
+            src="./adept-ai-logo.svg"
+            class="logo-svg"
+            width="36"
+            height="28"
+            alt="Adept AI Agency logo"
+          />
           <div class="nav-wordmark" style="margin-left:12px;">
             <span style="font-size:16px;font-weight:700;color:white;">ADEPT</span>
             <span style="font-size:10px;color:var(--teal-bright);">AI AGENCY</span>

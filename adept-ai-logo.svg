@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60" role="img" aria-label="Adept AI Agency">
+  <title>Adept AI Agency</title>
+
+  <!-- ── Signal Chevron Icon ── -->
+  <!-- Outer chevron (forest teal) -->
+  <polygon points="24,52 36,8 48,52 43,52 36,22 29,52" fill="#085041"/>
+  <!-- Inner chevron shard (bright teal, lighter inner shape) -->
+  <polygon points="36,22 44,52 40,52 36,32 32,52 28,52" fill="#1D9E75" opacity="0.75"/>
+
+  <!-- ── Vertical rule divider ── -->
+  <line x1="62" y1="10" x2="62" y2="50" stroke="#1D9E75" stroke-width="1.5"/>
+
+  <!-- ── Wordmark ── -->
+  <!-- ADEPT in near-black -->
+  <text
+    x="72" y="32"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="22"
+    font-weight="700"
+    letter-spacing="1"
+    fill="#0C1F1A"
+  >ADEPT</text>
+
+  <!-- AI in forest teal -->
+  <text
+    x="72" y="50"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="13"
+    font-weight="600"
+    letter-spacing="4"
+    fill="#085041"
+  >AI AGENCY</text>
+</svg>
