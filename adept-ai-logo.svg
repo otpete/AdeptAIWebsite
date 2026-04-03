@@ -23,27 +23,7 @@
   <!-- Crossbar right node -->
   <circle cx="49" cy="36" r="4.5" fill="#0F6E56"/>
 
-  <!-- ── Vertical rule divider ─────────────────────────────────── -->
-  <line x1="76" y1="10" x2="76" y2="60" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round"/>
-
-  <!-- ── Wordmark ───────────────────────────────────────────────── -->
-  <!-- ADEPT — near black, bold -->
-  <text
-    x="88" y="38"
-    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
-    font-size="26"
-    font-weight="700"
-    letter-spacing="1.5"
-    fill="#085041"
-  >ADEPT</text>
-
-  <!-- AI — forest teal, slightly smaller, tracking out -->
-  <text
-    x="88" y="57"
-    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
-    font-size="14"
-    font-weight="600"
-    letter-spacing="5"
-    fill="#1D9E75"
-  >AI</text>
+  <!-- Note: this file is used as an icon-only logo in the header/footer.
+       The HTML renders the wordmark text separately, so divider/wordmark text
+       is intentionally omitted to avoid duplicate lettering. -->
 </svg>
