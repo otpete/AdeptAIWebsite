@@ -88,7 +88,9 @@ nav {
   height: 68px; padding: 0 24px; max-width: 1160px; margin: 0 auto;
 }
 .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
-.nav-logo img { width: 48px; height: 36px; display: block; }
+.nav-logo img { display: block; width: auto; }
+.nav-logo-icon { height: 44px; }
+.footer-logo-icon { height: 34px; }
 .nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
 .nav-wordmark span:first-child {
   font-size: 17px; font-weight: 700; color: var(--white); letter-spacing: 0.5px;
@@ -596,9 +598,7 @@ footer {
     <a href="#" class="nav-logo">
       <img
         src="./adept-ai-logo.svg"
-        class="logo-svg"
-        width="48"
-        height="36"
+        class="logo-svg nav-logo-icon"
         alt="Adept AI Agency logo"
       />
       <div class="nav-wordmark">
@@ -1090,9 +1090,7 @@ footer {
         <a href="#" class="nav-logo" style="display:inline-flex;">
           <img
             src="./adept-ai-logo.svg"
-            class="logo-svg"
-            width="36"
-            height="28"
+            class="logo-svg footer-logo-icon"
             alt="Adept AI Agency logo"
           />
           <div class="nav-wordmark" style="margin-left:12px;">
