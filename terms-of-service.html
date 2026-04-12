@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Adept AI Agency</title>
+<meta name="description" content="Terms of Service for Adept AI Agency. AI-powered systems for Australian trade suppliers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+
+/* ── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F1EFE8;
+  color: #444441;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── CSS Variables ─────────────────────────────────────────────── */
+:root {
+  --teal:        #085041;
+  --teal-mid:    #0F6E56;
+  --teal-bright: #1D9E75;
+  --teal-tint:   #E1F5EE;
+  --navy:        #042C53;
+  --amber:       #BA7517;
+  --amber-light: #EF9F27;
+  --near-black:  #0C1F1A;
+  --charcoal:    #444441;
+  --grey:        #888780;
+  --off-white:   #F1EFE8;
+  --white:       #FFFFFF;
+}
+
+/* ── NAV ───────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(4,44,83,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(29,158,117,0.2);
+  transition: all 0.3s;
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px; padding: 0 24px; max-width: 1160px; margin: 0 auto;
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+.nav-wordmark span:first-child { font-size: 17px; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+.nav-wordmark span:last-child  { font-size: 11px; font-weight: 600; color: var(--teal-bright); letter-spacing: 2px; margin-top: 1px; }
+.nav-back {
+  display: flex; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.6); text-decoration: none;
+  font-size: 14px; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: #fff; }
+.nav-back svg { width: 16px; height: 16px; }
+
+/* ── HERO ──────────────────────────────────────────────────────── */
+.tos-hero {
+  background: var(--navy);
+  padding: 140px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.tos-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(29,158,117,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.tos-hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--teal-bright), transparent);
+}
+.hero-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.hero-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal-bright);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700; color: #fff;
+  line-height: 1.08; letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+.hero-title em {
+  font-style: normal;
+  color: var(--teal-bright);
+}
+.hero-meta {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  margin-top: 32px;
+}
+.hero-meta-item {
+  display: flex; flex-direction: column;
+  gap: 2px;
+}
+.hero-meta-item span:first-child {
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+}
+.hero-meta-item span:last-child {
+  font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75);
+}
+
+/* ── LAYOUT ────────────────────────────────────────────────────── */
+.tos-layout {
+  max-width: 1160px; margin: 0 auto;
+  padding: 72px 24px 120px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ── SIDEBAR / TOC ─────────────────────────────────────────────── */
+.tos-sidebar {
+  position: sticky; top: 96px;
+}
+.toc-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal-bright);
+  margin-bottom: 16px; display: block;
+}
+.toc-list { list-style: none; }
+.toc-list li { border-left: 2px solid rgba(8,80,65,0.15); }
+.toc-list li.active { border-left-color: var(--teal-bright); }
+.toc-list a {
+  display: block; padding: 8px 16px;
+  font-size: 13px; font-weight: 500; color: var(--grey);
+  text-decoration: none; transition: all 0.2s;
+  line-height: 1.4;
+}
+.toc-list li.active a { color: var(--teal-mid); font-weight: 600; }
+.toc-list a:hover { color: var(--teal-mid); }
+
+.toc-cta {
+  margin-top: 40px; padding: 24px;
+  background: var(--teal); border-radius: 12px;
+}
+.toc-cta p {
+  font-size: 13px; color: rgba(255,255,255,0.8);
+  line-height: 1.6; margin-bottom: 16px;
+}
+.toc-cta a {
+  display: inline-block;
+  background: var(--amber); color: #fff;
+  font-size: 13px; font-weight: 600;
+  padding: 10px 20px; border-radius: 6px;
+  text-decoration: none; transition: background 0.2s;
+}
+.toc-cta a:hover { background: var(--amber-light); }
+
+/* ── CONTENT ───────────────────────────────────────────────────── */
+.tos-content { min-width: 0; }
+
+.tos-section {
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(8,80,65,0.1);
+}
+.tos-section:last-child {
+  border-bottom: none; margin-bottom: 0;
+}
+
+.section-number {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal-bright);
+  margin-bottom: 8px; display: block;
+}
+.section-title {
+  font-size: 26px; font-weight: 700;
+  color: var(--near-black); line-height: 1.2;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--teal-tint);
+}
+
+.tos-content h3 {
+  font-size: 16px; font-weight: 700;
+  color: var(--teal-mid);
+  margin: 28px 0 10px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.tos-content p {
+  font-size: 15px; color: var(--charcoal);
+  line-height: 1.8; margin-bottom: 16px;
+}
+.tos-content ul, .tos-content ol {
+  margin: 0 0 16px 0; padding-left: 0;
+  list-style: none;
+}
+.tos-content ul li, .tos-content ol li {
+  font-size: 15px; color: var(--charcoal);
+  line-height: 1.8; padding: 6px 0 6px 28px;
+  position: relative;
+  border-bottom: 1px solid rgba(8,80,65,0.06);
+}
+.tos-content ul li:last-child,
+.tos-content ol li:last-child { border-bottom: none; }
+.tos-content ul li::before {
+  content: '';
+  position: absolute; left: 0; top: 16px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--teal-bright);
+}
+.tos-content ol { counter-reset: item; }
+.tos-content ol li { counter-increment: item; }
+.tos-content ol li::before {
+  content: counter(item) ".";
+  position: absolute; left: 0;
+  font-weight: 700; color: var(--teal-bright); font-size: 14px;
+}
+
+/* ── HIGHLIGHT BOX ─────────────────────────────────────────────── */
+.highlight-box {
+  background: var(--teal-tint);
+  border-left: 4px solid var(--teal-bright);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.highlight-box p {
+  margin-bottom: 0; font-size: 14px;
+  color: var(--teal); font-weight: 500;
+}
+.highlight-box strong { color: var(--teal-mid); }
+
+.warning-box {
+  background: #FAEEDA;
+  border-left: 4px solid var(--amber);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.warning-box p { margin-bottom: 0; font-size: 14px; color: #7a4a00; font-weight: 500; }
+
+/* ── DEFINITION TABLE ──────────────────────────────────────────── */
+.def-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; }
+.def-table tr { border-bottom: 1px solid rgba(8,80,65,0.1); }
+.def-table tr:last-child { border-bottom: none; }
+.def-table td { padding: 12px 16px; font-size: 14px; vertical-align: top; }
+.def-table td:first-child {
+  font-weight: 700; color: var(--teal-mid);
+  width: 160px; white-space: nowrap;
+}
+.def-table td:last-child { color: var(--charcoal); line-height: 1.7; }
+.def-table tr:nth-child(even) td { background: rgba(8,80,65,0.03); }
+
+/* ── CONTACT STRIP ─────────────────────────────────────────────── */
+.contact-strip {
+  background: var(--near-black);
+  border-radius: 12px;
+  padding: 40px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; flex-wrap: wrap;
+  margin-top: 64px;
+}
+.contact-strip h3 {
+  font-size: 22px; font-weight: 700; color: #fff;
+  margin-bottom: 8px;
+}
+.contact-strip p { font-size: 15px; color: rgba(255,255,255,0.6); margin: 0; }
+.contact-strip a.btn {
+  display: inline-block; padding: 14px 28px;
+  background: var(--amber); color: #fff;
+  font-weight: 700; font-size: 15px;
+  border-radius: 6px; text-decoration: none;
+  white-space: nowrap; transition: background 0.2s;
+}
+.contact-strip a.btn:hover { background: var(--amber-light); }
+
+/* ── FOOTER ────────────────────────────────────────────────────── */
+footer {
+  background: var(--near-black);
+  padding: 64px 0 0;
+}
+.footer-grid {
+  max-width: 1160px; margin: 0 auto; padding: 0 24px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; margin-top: 16px; }
+.footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+  max-width: 1160px; margin: 0 auto; padding: 24px 24px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.3); }
+.footer-bottom a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.8); }
+.footer-bottom-links { display: flex; gap: 24px; }
+.footer-bottom .active-page { color: var(--teal-bright); }
+
+/* ── PROGRESS BAR ──────────────────────────────────────────────── */
+.reading-progress {
+  position: fixed; top: 68px; left: 0; right: 0; height: 3px;
+  background: rgba(255,255,255,0.05); z-index: 99;
+}
+.reading-progress-bar {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--teal-bright), var(--amber-light));
+  transition: width 0.1s linear;
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .tos-layout { grid-template-columns: 1fr; gap: 0; }
+  .tos-sidebar { position: static; margin-bottom: 48px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .contact-strip { padding: 32px 24px; }
+  .hero-meta { gap: 20px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── READING PROGRESS ─────────────────────────────────────────── -->
+<div class="reading-progress"><div class="reading-progress-bar" id="progressBar"></div></div>
+
+<!-- ── NAV ─────────────────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="11 1 54 60" width="36" height="40" role="img" aria-label="Adept AI Agency">
+        <line x1="20" y1="52" x2="38" y2="12" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="38" y1="12" x2="56" y2="52" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+        <line x1="27" y1="36" x2="49" y2="36" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="20" cy="52" r="7" fill="#085041"/>
+        <circle cx="56" cy="52" r="7" fill="#085041"/>
+        <circle cx="38" cy="12" r="9" fill="#1D9E75"/>
+        <circle cx="27" cy="36" r="4.5" fill="#0F6E56"/>
+        <circle cx="49" cy="36" r="4.5" fill="#0F6E56"/>
+      </svg>
+      <div class="nav-wordmark">
+        <span>ADEPT</span>
+        <span>AI AGENCY</span>
+      </div>
+    </a>
+    <a href="index.html" class="nav-back">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to website
+    </a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="tos-hero">
+  <div class="hero-inner">
+    <span class="hero-label">Legal</span>
+    <h1 class="hero-title">Terms of <em>Service</em></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span>Effective Date</span>
+        <span>12 April 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>Last Updated</span>
+        <span>12 April 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>Jurisdiction</span>
+        <span>New South Wales, Australia</span>
+      </div>
+      <div class="hero-meta-item">
+        <span>ABN</span>
+        <span>30 696 796 871</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LAYOUT ────────────────────────────────────────────────────── -->
+<div class="tos-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="tos-sidebar">
+    <span class="toc-label">On this page</span>
+    <ul class="toc-list" id="tocList">
+      <li data-section="definitions"><a href="#definitions">1. Definitions</a></li>
+      <li data-section="services"><a href="#services">2. Services</a></li>
+      <li data-section="payment"><a href="#payment">3. Fees &amp; Payment</a></li>
+      <li data-section="term"><a href="#term">4. Term &amp; Termination</a></li>
+      <li data-section="data"><a href="#data">5. Data &amp; Privacy</a></li>
+      <li data-section="ip"><a href="#ip">6. Intellectual Property</a></li>
+      <li data-section="warranties"><a href="#warranties">7. Warranties</a></li>
+      <li data-section="liability"><a href="#liability">8. Liability</a></li>
+      <li data-section="conduct"><a href="#conduct">9. Acceptable Use</a></li>
+      <li data-section="disputes"><a href="#disputes">10. Disputes</a></li>
+      <li data-section="general"><a href="#general">11. General</a></li>
+      <li data-section="contact"><a href="#contact-section">12. Contact Us</a></li>
+    </ul>
+
+    <div class="toc-cta">
+      <p>Questions about these terms? We'll give you a straight answer — no legal runaround.</p>
+      <a href="mailto:hello@adeptai.com.au">Email us directly →</a>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="tos-content">
+
+    <div class="highlight-box">
+      <p><strong>Plain English summary:</strong> These terms govern your use of Adept AI Agency's services. We've written them to be readable. If something isn't clear, email us at <a href="mailto:hello@adeptai.com.au" style="color:var(--teal-mid);">hello@adeptai.com.au</a> before signing anything.</p>
+    </div>
+
+    <p style="margin-top:24px;">These Terms of Service (<strong>"Terms"</strong>) govern the relationship between <strong>Adept AI Agency</strong> (ABN 30 696 796 871), operating from 79 Carrington Street, Narara NSW 2250 (<strong>"we"</strong>, <strong>"us"</strong>, <strong>"Adept AI"</strong>) and any person or business (<strong>"you"</strong>, <strong>"Client"</strong>) that engages our services, accesses our website at adeptai.com.au, or enters into a Client Service Agreement with us.</p>
+    <p>By using our services or signing a Client Service Agreement, you confirm you have read and agree to these Terms.</p>
+
+    <!-- 1. DEFINITIONS -->
+    <div class="tos-section" id="definitions">
+      <span class="section-number">Section 01</span>
+      <h2 class="section-title">Definitions</h2>
+      <table class="def-table">
+        <tr><td>Agreement</td><td>The Client Service Agreement entered into between you and Adept AI Agency, incorporating these Terms and any applicable Schedule.</td></tr>
+        <tr><td>Services</td><td>The AI-powered automation services provided by Adept AI, as described in clause 2 and in Schedule A of your Agreement.</td></tr>
+        <tr><td>Client Data</td><td>All business information, customer records, pricing data, and other data you provide to us or that we access in delivering the Services.</td></tr>
+        <tr><td>Confidential Information</td><td>Any information marked confidential, or that a reasonable person would understand to be confidential, disclosed by either party in connection with the Services.</td></tr>
+        <tr><td>Commencement Date</td><td>The date on which we begin delivering Services, as specified in your Agreement.</td></tr>
+        <tr><td>Pilot Period</td><td>The initial 90-day engagement period from the Commencement Date.</td></tr>
+        <tr><td>Monthly Fee</td><td>The recurring fee payable for the Services, as set out in Schedule A of your Agreement.</td></tr>
+        <tr><td>Australian Consumer Law</td><td>Schedule 2 of the Competition and Consumer Act 2010 (Cth).</td></tr>
+      </table>
+    </div>
+
+    <!-- 2. SERVICES -->
+    <div class="tos-section" id="services">
+      <span class="section-number">Section 02</span>
+      <h2 class="section-title">Services</h2>
+
+      <h3>2.1 What We Provide</h3>
+      <p>Adept AI Agency delivers AI-powered business automation services tailored for Australian trade suppliers and construction industry businesses. Our service modules include:</p>
+      <ul>
+        <li><strong>AI Quoting Assistant</strong> — automated, customer-specific quote generation integrated with your accounting or ERP system (MYOB, Xero, Pronto Xi, Unleashed, OSTENDO)</li>
+        <li><strong>24/7 Inquiry Responder</strong> — AI-managed handling of inbound enquiries via phone, email, and WhatsApp, with escalation protocols for complex matters</li>
+        <li><strong>Accounts Receivable Automation</strong> — personalised, scheduled payment reminders issued on your behalf</li>
+        <li><strong>Customer Churn Detection</strong> — real-time monitoring of account activity and alerts when regular customers go quiet</li>
+        <li><strong>Credit Risk Monitoring</strong> — payment pattern analysis and early-warning flags for at-risk accounts</li>
+        <li><strong>Knowledge Capture &amp; Retention</strong> — documentation of pricing history, customer preferences, and process knowledge</li>
+      </ul>
+      <p>The specific modules included in your engagement are set out in Schedule A of your Agreement.</p>
+
+      <h3>2.2 System Integration</h3>
+      <p>We will connect to your existing accounting and ERP systems as agreed. You are responsible for providing valid credentials and access within 5 business days of your Commencement Date. We support MYOB AccountRight, MYOB Business, Xero, Pronto Xi, Unleashed, and OSTENDO as standard integrations.</p>
+
+      <h3>2.3 Implementation</h3>
+      <p>We handle all technical setup. You agree to participate in an initial onboarding session (approximately 2–3 hours in the first week) and to designate a primary internal contact for the duration of the Agreement. Most clients are operational within 30 days of their first call.</p>
+
+      <h3>2.4 Service Changes</h3>
+      <p>We may update, improve, or modify the Services from time to time. We will give you at least 14 days written notice of any material change. If a change materially reduces the Services you receive, you may terminate your Agreement without penalty within that 14-day period.</p>
+
+      <h3>2.5 AI-Generated Outputs</h3>
+      <div class="warning-box">
+        <p><strong>Important:</strong> AI-generated outputs (including quotes, messages, and reports) should be reviewed by your team before acting on them. You accept responsibility for reviewing and approving any AI-generated communication issued on your behalf. We are not liable for consequences arising from acting on unreviewed AI outputs.</p>
+      </div>
+
+      <h3>2.6 What's Not Included</h3>
+      <p>Unless separately agreed in writing, our Services do not include: website design or redevelopment; accounting, bookkeeping, or tax advice; hardware or telecommunications; staff training beyond the agreed onboarding; or custom software development outside the defined service modules.</p>
+    </div>
+
+    <!-- 3. FEES & PAYMENT -->
+    <div class="tos-section" id="payment">
+      <span class="section-number">Section 03</span>
+      <h2 class="section-title">Fees &amp; Payment</h2>
+
+      <h3>3.1 Monthly Fee</h3>
+      <p>You agree to pay the Monthly Fee set out in Schedule A of your Agreement. All fees are in Australian Dollars (AUD) and are exclusive of GST. GST will be added to each invoice where applicable.</p>
+
+      <h3>3.2 Invoicing</h3>
+      <p>We will issue a tax invoice on or around the 1st of each calendar month for the upcoming month's services. Invoices are compatible with MYOB and Xero import formats.</p>
+
+      <h3>3.3 Payment Terms</h3>
+      <p>Payment is due within 14 days of the invoice date. We accept direct bank transfer (EFT) for all amounts, and credit card for monthly fees under $1,000 AUD. Bank details appear on each invoice.</p>
+
+      <h3>3.4 Late Payment</h3>
+      <p>If payment is not received within 14 days, we may: apply a late payment fee of 2% per month on the overdue balance; suspend services with 5 business days written notice; and recover reasonable costs of collecting overdue amounts, including legal fees where applicable.</p>
+
+      <h3>3.5 Fee Reviews</h3>
+      <p>We may review fees with no less than 30 days written notice. You may terminate your Agreement without penalty within that 30-day window if you do not accept the revised fee.</p>
+
+      <h3>3.6 Onboarding Fee</h3>
+      <p>A one-time onboarding fee, if applicable, is set out in Schedule A. This fee is non-refundable once the onboarding process has commenced.</p>
+    </div>
+
+    <!-- 4. TERM & TERMINATION -->
+    <div class="tos-section" id="term">
+      <span class="section-number">Section 04</span>
+      <h2 class="section-title">Term &amp; Termination</h2>
+
+      <h3>4.1 Initial Term (Pilot Period)</h3>
+      <p>Your Agreement begins on the Commencement Date and runs for an initial 90-day Pilot Period. This gives you time to assess the value of the Services before committing to ongoing engagement.</p>
+
+      <h3>4.2 Continuation</h3>
+      <p>After the Pilot Period, your Agreement automatically continues month-to-month unless either party provides written notice of termination under clause 4.3.</p>
+
+      <h3>4.3 Termination by Either Party</h3>
+      <p>Either party may terminate the Agreement at any time after the Pilot Period by providing 30 days written notice by email to the addresses recorded in the Agreement.</p>
+
+      <h3>4.4 Termination for Cause</h3>
+      <p>Either party may terminate immediately if: the other party materially breaches these Terms and fails to remedy the breach within 14 days of written notice; the other party becomes insolvent or enters administration; or continued performance would require unlawful action.</p>
+
+      <h3>4.5 On Termination</h3>
+      <ul>
+        <li>All outstanding invoices become immediately payable</li>
+        <li>We will export and deliver your Client Data within 10 business days</li>
+        <li>We will revoke all access to your systems and return or destroy your credentials</li>
+        <li>Clauses 5 (Data &amp; Privacy), 6 (IP), 7 (Warranties), 8 (Liability), and 10 (Disputes) survive termination</li>
+      </ul>
+    </div>
+
+    <!-- 5. DATA & PRIVACY -->
+    <div class="tos-section" id="data">
+      <span class="section-number">Section 05</span>
+      <h2 class="section-title">Data &amp; Privacy</h2>
+
+      <h3>5.1 Your Data Is Yours</h3>
+      <p>You retain full ownership of all Client Data. We do not claim any ownership or licence over your business data, customer records, or operational information. We access your data solely to deliver the Services.</p>
+
+      <h3>5.2 How We Handle Your Data</h3>
+      <ul>
+        <li>Client Data is stored with encryption at rest and in transit</li>
+        <li>Access is restricted to Adept AI personnel directly involved in delivering your Services</li>
+        <li>We do not sell, transfer, or disclose your data to third parties without your written consent, except as required by law</li>
+        <li>We do not use your Client Data to train general-purpose AI models</li>
+      </ul>
+
+      <h3>5.3 Privacy Act Compliance</h3>
+      <p>Both parties agree to comply with the Privacy Act 1988 (Cth) and the Australian Privacy Principles in relation to any personal information handled under the Agreement. Our full Privacy Policy is available at <a href="privacy-policy.html" style="color:var(--teal-mid);">adeptai.com.au/privacy-policy</a>.</p>
+
+      <h3>5.4 Data Breach Notification</h3>
+      <p>If we become aware of a suspected data breach involving your Client Data, we will notify you within 72 hours and cooperate fully in any investigation or remediation. We will also fulfil our obligations under the Notifiable Data Breaches scheme where applicable.</p>
+
+      <h3>5.5 Confidentiality</h3>
+      <p>Both parties agree to keep confidential all business information shared during the engagement — including customer lists, pricing structures, financial data, and system credentials. This obligation continues for 3 years after termination.</p>
+    </div>
+
+    <!-- 6. IP -->
+    <div class="tos-section" id="ip">
+      <span class="section-number">Section 06</span>
+      <h2 class="section-title">Intellectual Property</h2>
+
+      <h3>6.1 Our Systems</h3>
+      <p>All AI models, automation workflows, software, templates, and methodologies developed by Adept AI Agency remain our sole intellectual property. During the term of your Agreement, you are granted a non-exclusive, non-transferable licence to use these systems for your business operations.</p>
+
+      <h3>6.2 Your Configurations</h3>
+      <p>Configurations, templates, and automations built specifically using your Client Data (e.g. quote templates in your format, your pricing logic) belong to you upon payment of all fees due. We retain the right to use the underlying methodology, frameworks, and AI models in other engagements.</p>
+
+      <h3>6.3 No Reverse Engineering</h3>
+      <p>You agree not to reverse-engineer, copy, reproduce, or independently replicate any Adept AI system, workflow, or methodology during the term of your Agreement and for 12 months following termination.</p>
+
+      <h3>6.4 Your Existing IP</h3>
+      <p>You retain ownership of all intellectual property you owned before engaging us. Nothing in these Terms transfers ownership of your existing brand, content, or systems to Adept AI Agency.</p>
+    </div>
+
+    <!-- 7. WARRANTIES -->
+    <div class="tos-section" id="warranties">
+      <span class="section-number">Section 07</span>
+      <h2 class="section-title">Warranties</h2>
+
+      <h3>7.1 We Warrant That:</h3>
+      <ul>
+        <li>We have the skill, expertise, and authority to provide the Services</li>
+        <li>Services will be performed with reasonable care and skill, in accordance with industry standards</li>
+        <li>We hold appropriate insurance, including professional indemnity cover</li>
+        <li>We will promptly notify you of any issue likely to materially affect service delivery</li>
+      </ul>
+
+      <h3>7.2 You Warrant That:</h3>
+      <ul>
+        <li>You have authority to enter into the Agreement and to provide us with access to your systems</li>
+        <li>Information you provide to us is accurate and up to date</li>
+        <li>You will comply with all applicable laws in connection with your use of the Services</li>
+        <li>You will not use the Services for any unlawful or fraudulent purpose</li>
+      </ul>
+
+      <h3>7.3 No Guarantee of Outcomes</h3>
+      <div class="highlight-box">
+        <p>We warrant the quality of our service delivery but <strong>do not guarantee specific business outcomes</strong>, including revenue increases, cost savings, or particular ROI figures. Results vary based on your individual business circumstances. We'll always be straight with you about what's realistic.</p>
+      </div>
+    </div>
+
+    <!-- 8. LIABILITY -->
+    <div class="tos-section" id="liability">
+      <span class="section-number">Section 08</span>
+      <h2 class="section-title">Limitation of Liability</h2>
+
+      <h3>8.1 Our Maximum Liability</h3>
+      <p>To the maximum extent permitted by law, our total aggregate liability to you under or in connection with these Terms (whether in contract, tort, statute, or otherwise) is limited to the total fees paid by you in the <strong>3 months immediately preceding the event</strong> giving rise to the claim.</p>
+
+      <h3>8.2 Excluded Loss</h3>
+      <p>Neither party is liable for loss of profits, loss of revenue, loss of data, indirect, special, or consequential loss — even if advised of the possibility of such loss.</p>
+
+      <h3>8.3 Australian Consumer Law</h3>
+      <p>Nothing in these Terms excludes, restricts, or modifies any right or remedy you may have under the Australian Consumer Law (Schedule 2 of the Competition and Consumer Act 2010 (Cth)) that cannot lawfully be excluded. If our services come with guarantees under Australian Consumer Law that cannot be excluded, our liability for a failure to comply with those guarantees is limited, to the extent permitted, to the re-supply of the services or the cost of re-supply.</p>
+    </div>
+
+    <!-- 9. ACCEPTABLE USE -->
+    <div class="tos-section" id="conduct">
+      <span class="section-number">Section 09</span>
+      <h2 class="section-title">Acceptable Use</h2>
+
+      <h3>9.1 Permitted Use</h3>
+      <p>The Services are provided for your legitimate business operations as an Australian trade supplier or construction industry business. You may use the Services only for lawful purposes and in accordance with these Terms.</p>
+
+      <h3>9.2 Prohibited Use</h3>
+      <p>You must not use the Services to:</p>
+      <ul>
+        <li>Engage in fraudulent, deceptive, or misleading conduct toward your customers</li>
+        <li>Send unsolicited communications in breach of the Spam Act 2003 (Cth)</li>
+        <li>Violate any applicable privacy laws or the Australian Privacy Principles</li>
+        <li>Infringe the intellectual property rights of any third party</li>
+        <li>Attempt to access, tamper with, or disrupt any systems, networks, or data not covered by your Agreement</li>
+        <li>Resell or sublicense access to the Services without our prior written consent</li>
+      </ul>
+
+      <h3>9.3 Your Responsibilities</h3>
+      <p>You are responsible for all activity conducted through your account and for ensuring your team uses the Services appropriately. You must notify us immediately if you become aware of any unauthorised use.</p>
+    </div>
+
+    <!-- 10. DISPUTES -->
+    <div class="tos-section" id="disputes">
+      <span class="section-number">Section 10</span>
+      <h2 class="section-title">Disputes</h2>
+
+      <h3>10.1 Talk to Us First</h3>
+      <p>If something isn't right, contact us. Most issues can be resolved with a direct conversation. Email <a href="mailto:hello@adeptai.com.au" style="color:var(--teal-mid);">hello@adeptai.com.au</a> and we'll respond within one business day.</p>
+
+      <h3>10.2 Formal Dispute Process</h3>
+      <ol>
+        <li><strong>Written notice:</strong> The party raising the dispute sends written notice to the other, describing the issue in reasonable detail</li>
+        <li><strong>Good-faith negotiation:</strong> Both parties attempt to resolve the dispute within 14 days of the notice</li>
+        <li><strong>Mediation:</strong> If unresolved, the dispute is referred to a mediator agreed by both parties, or appointed by the Australian Disputes Centre (ADC)</li>
+        <li><strong>Legal proceedings:</strong> Only if mediation fails may either party commence court proceedings</li>
+      </ol>
+
+      <h3>10.3 Governing Law</h3>
+      <p>These Terms are governed by the laws of New South Wales, Australia. Both parties submit to the non-exclusive jurisdiction of the courts of New South Wales.</p>
+    </div>
+
+    <!-- 11. GENERAL -->
+    <div class="tos-section" id="general">
+      <span class="section-number">Section 11</span>
+      <h2 class="section-title">General Terms</h2>
+
+      <h3>11.1 Entire Agreement</h3>
+      <p>These Terms, together with your Client Service Agreement and Schedule A, constitute the entire agreement between the parties and supersede all prior discussions, representations, and arrangements.</p>
+
+      <h3>11.2 Amendments</h3>
+      <p>We may update these Terms from time to time. We will post the updated Terms on our website and notify existing clients by email with at least 14 days notice before changes take effect. Your continued use of the Services after the effective date constitutes acceptance.</p>
+
+      <h3>11.3 Assignment</h3>
+      <p>You may not assign or transfer your rights or obligations under these Terms without our prior written consent. We may assign these Terms to a related body corporate with 30 days written notice to you.</p>
+
+      <h3>11.4 Force Majeure</h3>
+      <p>Neither party is liable for delays or failures in performance resulting from circumstances beyond their reasonable control, including natural disasters, government action, telecommunications failures, or pandemic events. The affected party must notify the other promptly and take reasonable steps to mitigate the impact.</p>
+
+      <h3>11.5 Severability</h3>
+      <p>If any provision of these Terms is found to be invalid or unenforceable, that provision will be modified to the minimum extent necessary, and the remaining provisions continue in full force.</p>
+
+      <h3>11.6 Waiver</h3>
+      <p>Failure to exercise any right under these Terms is not a waiver of that right.</p>
+
+      <h3>11.7 Relationship of Parties</h3>
+      <p>The parties are independent contractors. Nothing in these Terms creates a partnership, joint venture, employment, or agency relationship.</p>
+
+      <h3>11.8 Notices</h3>
+      <p>All formal notices must be in writing and sent by email to the addresses recorded in your Agreement. Notices are deemed received on the next business day after sending, provided no delivery failure is received.</p>
+    </div>
+
+    <!-- 12. CONTACT -->
+    <div class="tos-section" id="contact-section">
+      <span class="section-number">Section 12</span>
+      <h2 class="section-title">Contact Us</h2>
+      <p>If you have any questions about these Terms, your Agreement, or how we handle your data, please get in touch. We'll give you a straight answer.</p>
+      <table class="def-table" style="margin-top:24px;">
+        <tr><td>Business</td><td>Adept AI Agency</td></tr>
+        <tr><td>ABN</td><td>30 696 796 871</td></tr>
+        <tr><td>Address</td><td>79 Carrington Street, Narara NSW 2250, Australia</td></tr>
+        <tr><td>Email</td><td><a href="mailto:hello@adeptai.com.au" style="color:var(--teal-mid);">hello@adeptai.com.au</a></td></tr>
+        <tr><td>Website</td><td><a href="https://adeptai.com.au" style="color:var(--teal-mid);">adeptai.com.au</a></td></tr>
+      </table>
+    </div>
+
+    <!-- CONTACT STRIP -->
+    <div class="contact-strip">
+      <div>
+        <h3>Still have questions?</h3>
+        <p>No legal runaround. Just a straight conversation about what applies to your situation.</p>
+      </div>
+      <a href="mailto:hello@adeptai.com.au" class="btn">Email us directly →</a>
+    </div>
+
+  </main>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="display:inline-flex;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="11 1 54 60" width="36" height="40" role="img" aria-label="Adept AI Agency">
+          <line x1="20" y1="52" x2="38" y2="12" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="38" y1="12" x2="56" y2="52" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="27" y1="36" x2="49" y2="36" stroke="#1D9E75" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="20" cy="52" r="7" fill="#085041"/>
+          <circle cx="56" cy="52" r="7" fill="#085041"/>
+          <circle cx="38" cy="12" r="9" fill="#1D9E75"/>
+          <circle cx="27" cy="36" r="4.5" fill="#0F6E56"/>
+          <circle cx="49" cy="36" r="4.5" fill="#0F6E56"/>
+        </svg>
+        <div class="nav-wordmark" style="margin-left:12px;">
+          <span style="font-size:16px;font-weight:700;color:white;">ADEPT</span>
+          <span style="font-size:10px;color:#1D9E75;">AI AGENCY</span>
+        </div>
+      </a>
+      <p style="margin-top:16px;">AI-powered systems for Australian trade suppliers. Built by someone who spent 30 years in the industry.</p>
+      <p style="font-style:italic;font-size:13px;color:rgba(255,255,255,0.3);margin-top:8px;">"Built by a life on the tools."</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="index.html#how">AI Quoting Systems</a>
+      <a href="index.html#benefits">Invoice Automation</a>
+      <a href="index.html#benefits">Inquiry Handling</a>
+      <a href="index.html#benefits">Customer Retention</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#proof">Case Studies</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:hello@adeptai.com.au">hello@adeptai.com.au</a>
+      <a href="https://adeptai.com.au">adeptai.com.au</a>
+      <a href="https://calendar.app.google/JSwzYDTMVfWC7WpK9" target="_blank" rel="noopener noreferrer" style="margin-top:16px;display:inline-block;background:#BA7517;color:white;padding:10px 20px;border-radius:6px;font-weight:600;font-size:13px;">Book a free call →</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Adept AI Agency. All rights reserved. ABN: 30 696 796 871</p>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms-of-service.html" class="active-page">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Reading progress bar
+const bar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrolled = doc.scrollTop;
+  const total = doc.scrollHeight - doc.clientHeight;
+  bar.style.width = (scrolled / total * 100) + '%';
