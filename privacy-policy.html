@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Adept AI Agency</title>
+<meta name="description" content="Privacy Policy for Adept AI Agency. How we collect, use, and protect your personal information.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #F1EFE8;
+  color: #444441;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+:root {
+  --teal:        #085041;
+  --teal-mid:    #0F6E56;
+  --teal-bright: #1D9E75;
+  --teal-tint:   #E1F5EE;
+  --navy:        #042C53;
+  --navy-mid:    #185FA5;
+  --amber:       #BA7517;
+  --amber-light: #EF9F27;
+  --amber-tint:  #FAEEDA;
+  --near-black:  #0C1F1A;
+  --charcoal:    #444441;
+  --grey:        #888780;
+  --off-white:   #F1EFE8;
+  --white:       #FFFFFF;
+}
+
+.container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: var(--near-black);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  display: inline-flex; align-items: center; text-decoration: none;
+}
+.nav-wordmark { margin-left: 12px; display: flex; flex-direction: column; line-height: 1.1; }
+.nav-wordmark span:first-child { font-size: 16px; font-weight: 700; color: white; }
+.nav-wordmark span:last-child  { font-size: 10px; color: var(--teal-bright); letter-spacing: 2px; }
+.nav-back {
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px;
+  font-weight: 500; transition: color 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-back:hover { color: var(--teal-bright); }
+.nav-back svg { width: 14px; height: 14px; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--near-black);
+  padding: 140px 24px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(29,158,117,0.12), transparent);
+  pointer-events: none;
+}
+.hero-label {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal-bright);
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700; color: white;
+  line-height: 1.15; margin-bottom: 20px;
+}
+.hero-sub {
+  color: rgba(255,255,255,0.5); font-size: 16px; max-width: 560px; margin: 0 auto;
+}
+.hero-meta {
+  margin-top: 32px;
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+}
+.hero-meta span {
+  font-size: 13px; color: rgba(255,255,255,0.35);
+  display: flex; align-items: center; gap: 6px;
+}
+.hero-meta span::before {
+  content: ''; display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal-bright);
+}
+
+/* ── CONTENT ── */
+.policy-body {
+  padding: 72px 24px 96px;
+}
+
+.policy-toc {
+  background: var(--white);
+  border: 1px solid rgba(8,80,65,0.12);
+  border-left: 4px solid var(--teal-bright);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 56px;
+}
+.policy-toc h2 {
+  font-size: 13px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 16px;
+}
+.policy-toc ol {
+  list-style: none; counter-reset: toc;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px;
+}
+@media (max-width: 560px) { .policy-toc ol { grid-template-columns: 1fr; } }
+.policy-toc ol li {
+  counter-increment: toc;
+  font-size: 14px;
+}
+.policy-toc ol li a {
+  color: var(--charcoal); text-decoration: none;
+  display: flex; align-items: baseline; gap: 8px; transition: color 0.2s;
+}
+.policy-toc ol li a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 11px; font-weight: 700; color: var(--teal-bright);
+  min-width: 22px;
+}
+.policy-toc ol li a:hover { color: var(--teal); }
+
+/* Sections */
+.policy-section {
+  margin-bottom: 56px;
+  scroll-margin-top: 80px;
+}
+.section-number {
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--teal-bright);
+  display: block; margin-bottom: 8px;
+}
+.policy-section h2 {
+  font-size: 24px; font-weight: 700; color: var(--near-black);
+  margin-bottom: 20px; padding-bottom: 16px;
+  border-bottom: 1px solid rgba(8,80,65,0.1);
+}
+.policy-section p {
+  margin-bottom: 14px; font-size: 15.5px; color: var(--charcoal);
+}
+.policy-section p:last-child { margin-bottom: 0; }
+
+/* Info cards */
+.info-card {
+  background: var(--white); border-radius: 8px;
+  border: 1px solid rgba(8,80,65,0.1);
+  padding: 24px 28px; margin-bottom: 14px;
+}
+.info-card h3 {
+  font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 10px;
+}
+.info-card ul {
+  list-style: none; padding: 0;
+}
+.info-card ul li {
+  font-size: 15px; color: var(--charcoal);
+  padding: 6px 0;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.info-card ul li::before {
+  content: '→'; color: var(--teal-bright);
+  font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+
+/* Highlight box */
+.highlight-box {
+  background: var(--teal-tint);
+  border-left: 4px solid var(--teal-bright);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+.highlight-box p {
+  font-size: 15px !important; color: var(--teal) !important;
+  margin-bottom: 0 !important; font-weight: 500;
+}
+
+/* Amber note */
+.amber-note {
+  background: var(--amber-tint);
+  border-left: 4px solid var(--amber);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px; margin: 20px 0;
+}
+.amber-note p {
+  font-size: 15px !important; color: #7a4b0a !important;
+  margin-bottom: 0 !important;
+}
+
+/* Contact block */
+.contact-block {
+  background: var(--near-black);
+  border-radius: 12px;
+  padding: 40px 40px;
+  margin-top: 64px; text-align: center;
+}
+.contact-block h2 {
+  font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px;
+}
+.contact-block p { color: rgba(255,255,255,0.55); font-size: 15px; margin-bottom: 24px; }
+.contact-block a.btn {
+  display: inline-block; padding: 14px 32px;
+  background: var(--amber); color: white;
+  border-radius: 6px; font-weight: 600; font-size: 15px;
+  text-decoration: none; transition: background 0.2s;
+}
+.contact-block a.btn:hover { background: var(--amber-light); }
+.contact-detail {
+  margin-top: 20px; color: rgba(255,255,255,0.35); font-size: 13px;
+}
+.contact-detail a { color: var(--teal-bright); text-decoration: none; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--near-black);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 40px 24px;
+  text-align: center;
+}
+footer p {
+  color: rgba(255,255,255,0.25); font-size: 13px;
+}
+footer a { color: var(--teal-bright); text-decoration: none; }
+footer .footer-links {
+  display: flex; justify-content: center; gap: 24px; margin-top: 12px; flex-wrap: wrap;
+}
+footer .footer-links a {
+  color: rgba(255,255,255,0.35); font-size: 13px;
+  text-decoration: none; transition: color 0.2s;
+}
+footer .footer-links a:hover { color: var(--teal-bright); }
+footer .footer-links a.active { color: var(--teal-bright); }
+
+@media (max-width: 640px) {
+  .hero { padding: 120px 24px 60px; }
+  .contact-block { padding: 32px 24px; }
+  .policy-toc { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 90 70" width="36" height="28" fill="none">
+      <path d="M30 4 L4 60 L56 60 Z" fill="none" stroke="#085041" stroke-width="7" stroke-linejoin="miter"/>
+      <path d="M30 17 L12 57 L48 57 Z" fill="#0C1F1A"/>
+      <path d="M52 10 L74 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
+      <path d="M52 10 L86 62" fill="none" stroke="#1D9E75" stroke-width="7" stroke-linecap="round"/>
+      <path d="M57 32 L52 20 L66 50" fill="none" stroke="#0C1F1A" stroke-width="6.5" stroke-linecap="butt"/>
+    </svg>
+    <div class="nav-wordmark">
+      <span>ADEPT</span>
+      <span>AI AGENCY</span>
+    </div>
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M10 3L5 8l5 5"/>
+    </svg>
+    Back to site
+  </a>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="container">
+    <span class="hero-label">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="hero-sub">How Adept AI Agency collects, uses, and protects your personal information.</p>
+    <div class="hero-meta">
+      <span>Effective: 1 April 2026</span>
+      <span>Last updated: April 2026</span>
+      <span>Jurisdiction: Australia</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── BODY ── -->
+<div class="policy-body">
+  <div class="container">
+
+    <!-- Table of Contents -->
+    <div class="policy-toc">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#who-we-are">Who We Are</a></li>
+        <li><a href="#information-we-collect">Information We Collect</a></li>
+        <li><a href="#how-we-collect">How We Collect It</a></li>
+        <li><a href="#how-we-use">How We Use Your Information</a></li>
+        <li><a href="#disclosure">Disclosure to Third Parties</a></li>
+        <li><a href="#ai-tools">AI Tools &amp; Automated Processing</a></li>
+        <li><a href="#storage-security">Storage &amp; Security</a></li>
+        <li><a href="#your-rights">Your Rights</a></li>
+        <li><a href="#cookies">Cookies &amp; Website Analytics</a></li>
+        <li><a href="#links">Third-Party Links</a></li>
+        <li><a href="#updates">Updates to This Policy</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. Who We Are -->
+    <div class="policy-section" id="who-we-are">
+      <span class="section-number">01</span>
+      <h2>Who We Are</h2>
+      <p>Adept AI Agency ("Adept AI", "we", "us", "our") is an Australian business that designs and implements AI-powered systems for trade suppliers and businesses operating in the Australian construction industry. Our services include AI quoting systems, automated invoice collection, customer inquiry management, and related workflow automation.</p>
+      <p>We are committed to protecting your privacy and handling your personal information in accordance with the <strong>Privacy Act 1988 (Cth)</strong> and the <strong>Australian Privacy Principles (APPs)</strong>.</p>
+      <div class="highlight-box">
+        <p>This Privacy Policy applies to all personal information collected through our website at <strong>adeptai.com.au</strong>, via email, phone, discovery calls, and through the delivery of our services.</p>
+      </div>
+    </div>
+
+    <!-- 2. Information We Collect -->
+    <div class="policy-section" id="information-we-collect">
+      <span class="section-number">02</span>
+      <h2>Information We Collect</h2>
+      <p>We only collect personal information that is reasonably necessary for us to provide our services and communicate with you effectively.</p>
+
+      <div class="info-card">
+        <h3>Contact &amp; Identity Information</h3>
+        <ul>
+          <li>Your name and the name of your business</li>
+          <li>Email address and phone number</li>
+          <li>Business address or trading location</li>
+          <li>Your role or position within your business</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Business &amp; Operational Information</h3>
+        <ul>
+          <li>Details about your business operations, systems, and workflows shared during discovery calls or project scoping</li>
+          <li>Information about your customers, quoting processes, or invoicing systems — where provided by you for the purpose of building your AI system</li>
+          <li>Integration credentials or access details for third-party software (e.g. your ERP or quoting platform) — handled under separate service agreements</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Website &amp; Technical Information</h3>
+        <ul>
+          <li>IP address, browser type, and device information</li>
+          <li>Pages visited and time spent on our website</li>
+          <li>Referral source (how you found us)</li>
+          <li>Contact form submissions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 3. How We Collect -->
+    <div class="policy-section" id="how-we-collect">
+      <span class="section-number">03</span>
+      <h2>How We Collect It</h2>
+      <p>We collect personal information through the following channels:</p>
+      <div class="info-card">
+        <ul>
+          <li>When you submit an inquiry or book a discovery call via our website</li>
+          <li>When you contact us directly by email or phone</li>
+          <li>During discovery calls, scoping sessions, or onboarding conversations</li>
+          <li>When you engage us to build or manage AI systems for your business</li>
+          <li>Automatically, through website analytics tools when you visit adeptai.com.au</li>
+        </ul>
+      </div>
+      <p>We collect personal information only by lawful and fair means. Where practicable, we collect personal information directly from you.</p>
+    </div>
+
+    <!-- 4. How We Use -->
+    <div class="policy-section" id="how-we-use">
+      <span class="section-number">04</span>
+      <h2>How We Use Your Information</h2>
+      <p>We use your personal information only for the purposes for which it was collected, or for closely related purposes you would reasonably expect. These include:</p>
+
+      <div class="info-card">
+        <h3>Service Delivery</h3>
+        <ul>
+          <li>Responding to your inquiry and booking your discovery call</li>
+          <li>Scoping, building, and delivering AI systems for your business</li>
+          <li>Providing ongoing support, maintenance, and optimisation</li>
+          <li>Communicating with you about your project or account</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Business Operations</h3>
+        <ul>
+          <li>Invoicing and processing payments for our services</li>
+          <li>Maintaining records as required by law</li>
+          <li>Improving our services and website experience</li>
+          <li>Complying with our legal obligations</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Marketing (with your consent)</h3>
+        <ul>
+          <li>Sending relevant updates, case studies, or information about our services — only where you have opted in or where permitted under the Spam Act 2003</li>
+          <li>You may unsubscribe from any marketing communications at any time</li>
+        </ul>
+      </div>
+
+      <div class="amber-note">
+        <p>We will never use your personal information for purposes unrelated to our services, or sell, rent, or trade your information to any third party for their marketing purposes.</p>
+      </div>
+    </div>
+
+    <!-- 5. Disclosure -->
+    <div class="policy-section" id="disclosure">
+      <span class="section-number">05</span>
+      <h2>Disclosure to Third Parties</h2>
+      <p>We do not sell, trade, or rent your personal information to third parties. We may share your information with trusted service providers who assist us in operating our business, subject to strict confidentiality obligations. These may include:</p>
+      <div class="info-card">
+        <ul>
+          <li>Cloud infrastructure and software hosting providers (e.g. server hosting, email delivery)</li>
+          <li>Scheduling and calendar tools used to manage discovery calls</li>
+          <li>Analytics platforms for monitoring website performance</li>
+          <li>Accounting and invoicing software for billing purposes</li>
+          <li>AI platform providers (e.g. OpenAI, Anthropic) where their tools form part of the systems we build — governed by their own privacy policies and our service agreements with you</li>
+        </ul>
+      </div>
+      <p>We may also disclose personal information where required or authorised by Australian law — for example, in response to a court order, or to comply with our obligations under the <em>Privacy Act 1988 (Cth)</em>.</p>
+
+      <div class="highlight-box">
+        <p>Where we engage overseas service providers (for example, cloud platforms or AI infrastructure), we take reasonable steps to ensure those providers handle your information in a manner consistent with the Australian Privacy Principles.</p>
+      </div>
+    </div>
+
+    <!-- 6. AI Tools -->
+    <div class="policy-section" id="ai-tools">
+      <span class="section-number">06</span>
+      <h2>AI Tools &amp; Automated Processing</h2>
+      <p>Adept AI Agency builds and manages AI-powered systems. It's important you understand how AI tools may interact with data in the context of our services.</p>
+      <div class="info-card">
+        <h3>In the Systems We Build for You</h3>
+        <ul>
+          <li>AI systems we build for your business process your business data (quotes, invoices, customer inquiries) on your behalf</li>
+          <li>The handling of your customers' data within those systems is governed by your own privacy obligations as the business operator</li>
+          <li>We will work with you during onboarding to ensure systems are configured appropriately</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>In Our Own Operations</h3>
+        <ul>
+          <li>We may use AI tools internally to assist with communications, documentation, or project management</li>
+          <li>We do not input your confidential business information into public AI platforms without your knowledge</li>
+          <li>No automated decision-making that has a legal or significant effect on you is carried out without human review</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 7. Storage & Security -->
+    <div class="policy-section" id="storage-security">
+      <span class="section-number">07</span>
+      <h2>Storage &amp; Security</h2>
+      <p>We take the security of your personal information seriously. We implement reasonable administrative, technical, and physical safeguards to protect your information from misuse, interference, loss, unauthorised access, modification, or disclosure.</p>
+      <div class="info-card">
+        <ul>
+          <li>Personal information is stored on secure, access-controlled systems</li>
+          <li>We use encrypted communications where applicable (HTTPS, encrypted email)</li>
+          <li>Access to personal information is limited to personnel who need it to perform their role</li>
+          <li>We retain personal information only for as long as necessary to fulfil the purpose for which it was collected, or as required by law</li>
+        </ul>
+      </div>
+      <p>When personal information is no longer needed, we take reasonable steps to destroy or de-identify it securely.</p>
+      <div class="amber-note">
+        <p>No method of data transmission or storage over the internet is completely secure. While we take all reasonable steps to protect your information, we cannot guarantee absolute security.</p>
+      </div>
+    </div>
+
+    <!-- 8. Your Rights -->
+    <div class="policy-section" id="your-rights">
+      <span class="section-number">08</span>
+      <h2>Your Rights</h2>
+      <p>Under the Australian Privacy Principles, you have the right to:</p>
+      <div class="info-card">
+        <ul>
+          <li><strong>Access</strong> the personal information we hold about you</li>
+          <li><strong>Correct</strong> personal information that is inaccurate, out of date, incomplete, or misleading</li>
+          <li><strong>Complain</strong> about a breach of the APPs, with the right to escalate to the Office of the Australian Information Commissioner (OAIC) if unresolved</li>
+          <li><strong>Opt out</strong> of marketing communications at any time by contacting us or using the unsubscribe link in any marketing email</li>
+          <li><strong>Request deletion</strong> of your personal information, subject to our legal obligations to retain certain records</li>
+        </ul>
+      </div>
+      <p>To exercise any of these rights, please contact us using the details at the bottom of this policy. We will respond to access and correction requests within 30 days. In some circumstances we may need to verify your identity before processing your request.</p>
+      <p>If you are dissatisfied with our response to a privacy complaint, you may contact the <strong>Office of the Australian Information Commissioner (OAIC)</strong> at <a href="https://www.oaic.gov.au" style="color:var(--teal); font-weight:600;">oaic.gov.au</a> or by calling 1300 363 992.</p>
+    </div>
+
+    <!-- 9. Cookies -->
+    <div class="policy-section" id="cookies">
+      <span class="section-number">09</span>
+      <h2>Cookies &amp; Website Analytics</h2>
+      <p>Our website may use cookies and similar technologies to improve your browsing experience and help us understand how visitors use our site.</p>
+      <div class="info-card">
+        <h3>What Cookies We Use</h3>
+        <ul>
+          <li><strong>Essential cookies</strong> — required for core website functionality</li>
+          <li><strong>Analytics cookies</strong> — used to understand how visitors navigate our site (e.g. Google Analytics or similar)</li>
+          <li>We do not use advertising or tracking cookies to serve you ads across other websites</li>
+        </ul>
+      </div>
+      <p>You can control or disable cookies through your browser settings. Note that disabling certain cookies may affect the functionality of our website. Analytics data is aggregated and used to improve site performance only — it is not used to identify you personally.</p>
+    </div>
+
+    <!-- 10. Links -->
+    <div class="policy-section" id="links">
+      <span class="section-number">10</span>
+      <h2>Third-Party Links</h2>
+      <p>Our website may contain links to third-party websites, platforms, or resources (for example, scheduling tools or social media profiles). These sites have their own privacy policies, and we are not responsible for their content or practices.</p>
+      <p>We encourage you to read the privacy policy of any third-party site you visit via a link from our website.</p>
+    </div>
+
+    <!-- 11. Updates -->
+    <div class="policy-section" id="updates">
+      <span class="section-number">11</span>
+      <h2>Updates to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our services, legal obligations, or business practices. When we make material changes, we will update the "Last updated" date at the top of this page.</p>
+      <p>We encourage you to review this policy periodically. Continued use of our website or services after any changes constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 12. Contact -->
+    <div class="policy-section" id="contact-us">
+      <span class="section-number">12</span>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy, wish to access or correct your personal information, or want to make a privacy complaint, please contact us:</p>
+      <div class="info-card">
+        <h3>Adept AI Agency — Privacy Enquiries</h3>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:hello@adeptai.com.au" style="color:var(--teal); font-weight:600;">hello@adeptai.com.au</a></li>
+          <li><strong>Website:</strong> adeptai.com.au</li>
+          <li><strong>Location:</strong> Australia</li>
+        </ul>
+      </div>
+      <p>We will acknowledge your enquiry promptly and aim to resolve any privacy complaint within 30 days. If we need additional time, we will let you know.</p>
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="contact-block">
+      <h2>Have a question about your privacy?</h2>
+      <p>We'll give you a straight answer. No runaround, no legal deflection.</p>
+      <a href="mailto:hello@adeptai.com.au?subject=Privacy Enquiry" class="btn">Email us directly</a>
+      <p class="contact-detail">Or visit <a href="https://adeptai.com.au">adeptai.com.au</a> or <a href="https://calendar.app.google/JSwzYDTMVfWC7WpK9" target="_blank" rel="noopener noreferrer">book a discovery call</a>.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 Adept AI Agency. All rights reserved. ABN: 30 696 796 871</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html" class="active">Privacy Policy</a>
+    <a href="mailto:hello@adeptai.com.au">hello@adeptai.com.au</a>
+  </div>
+</footer>
+
+</body>
+</html>
